@@ -1,11 +1,13 @@
+[CmdletBinding()]
+param()
 $inputs = get-content "input.txt"
 $validPasswords = 0
 
 $inputs | % {
     $entry = $_     
-    $rule,$password = $_.split(": ")
-    $range,$letter = $rule.split(" ")
-    [int]$min,[int]$max = $range.split("-")
+    $rule,$password = $_ -split ": "
+    $range,$letter = $rule -split " "
+    [int]$min,[int]$max = $range -split "-"
     
     $occurrences = ($password.ToCharArray() -eq $letter).Count
 

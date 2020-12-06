@@ -1,3 +1,5 @@
+[CmdletBinding()]
+param()
 $inputs = get-content "input.txt"
 $sceneWidth = $inputs[0].Length
 $sceneHeight = $inputs.Length

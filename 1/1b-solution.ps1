@@ -1,3 +1,5 @@
+[CmdletBinding()]
+param()
 $inputs = get-content "input.txt"
 
 $inputs | % {$i = 0} { 

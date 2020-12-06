@@ -1,6 +1,5 @@
 [CmdletBinding()]
 param()
-
 $inputs = get-content "input.txt"
 [int64]$sceneWidth = $inputs[0].Length
 [int64]$sceneHeight = $inputs.Length
@@ -30,7 +29,7 @@ function get-numtreesforslope($right, $down) {
 }
 
 
-$SLOPES | % {[int64]$treeAccumulator = 1 } { $right,$down = $_.Split(","); $treeAccumulator *= get-numtreesforslope $right $down }
+$SLOPES | % {[int64]$treeAccumulator = 1 } { $right,$down = $_ -split ","; $treeAccumulator *= get-numtreesforslope $right $down }
 
 write-host "$treeAccumulator"
 
