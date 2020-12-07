@@ -1,4 +1,4 @@
-param ($dayNumber)
+param ([Parameter(Mandatory = $true)]$dayNumber)
 
 mkdir $dayNumber | out-null
 cd $dayNumber | out-null
